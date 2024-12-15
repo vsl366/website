@@ -565,11 +565,10 @@ span {
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
     gap: 3rem;
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    justify-items: center;
+    justify-content: center; /* Center items in the container */
 }
 
 .More-item {
@@ -584,8 +583,9 @@ span {
     cursor: pointer;
     color: var(--edu-content);
     transition: 0.4s ease-in-out;
-    width: 100%; /* Ensure full width within grid item */
+    flex-basis: calc(50% - 1.5rem); /* Ensure 2 columns */
     max-width: 400px; /* Control max width */
+    box-sizing: border-box;
 }
 
 .More-item:hover {
@@ -629,6 +629,14 @@ span {
     text-align: justify;
     justify-content: center;
 }
+
+/* Media query for smaller screen sizes to stack items in 1 column */
+@media (max-width: 768px) {
+    .More-item {
+        flex-basis: 100%; /* Stack items in one column */
+    }
+}
+
 
 .Contact{
     background-color: var(--bg-color);
