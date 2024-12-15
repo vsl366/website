@@ -560,25 +560,23 @@ span {
 .more-box .heading {
     margin-top: 1.5rem;
     margin-bottom: 4rem;
+    font-size: 2.5rem;
+    color: var(--edu-content);
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
     gap: 3rem;
-}
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjusted grid template */
-    gap: 3rem;
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    justify-items: center;
 }
 
 .More-item {
     display: flex;
     align-items: center;
-    min-height: 200px; 
-    min-width: 300px; 
+    min-height: 200px;
+    min-width: 300px;
     background: var(--bg-color);
     border: 3px solid grey;
     border-radius: 2rem;
@@ -586,51 +584,49 @@ span {
     cursor: pointer;
     color: var(--edu-content);
     transition: 0.4s ease-in-out;
+    width: 100%; /* Ensure full width within grid item */
+    max-width: 400px; /* Control max width */
 }
-.More-item:hover{
+
+.More-item:hover {
     border: 3px solid var(--line-dot);
     box-shadow: 0 0 15px var(--glow-color);
-    transform: scale(1.05);   
+    transform: scale(1.05);
 }
-.More h2{
-    color: var(--edu-content);
-}
-.More-item a{
-    display:contents;
-}
+
 .More-item img {
-    width: 40%; 
+    width: 40%;
     border-radius: 10%;
     border: 3px solid grey;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
-.More-item img:hover{ 
-    border: 3px solid var(--line-dot) ;
-} 
+.More-item img:hover {
+    border: 3px solid var(--line-dot);
+}
 
 .More-item .text-content {
-    width: 60%; 
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .More-item h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
-    margin-top: -4rem; 
-    margin-bottom: 1rem; 
+    margin-top: -1rem;
+    margin-bottom: 1rem;
     text-align: center;
+    color: var(--edu-content);
 }
 
 .More-item p {
     line-height: 1.6;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: cursive;
-    margin: 0; 
-    margin-left: 1.6rem;
-    text-align: justify; 
+    margin: 0;
+    text-align: justify;
     justify-content: center;
 }
 
