@@ -548,92 +548,95 @@ span {
     100% {
         transform: translateX(calc(-240px * 7)); /* Adjust based on the number of items */
     }
-}.More {
+}
+
+.More {
     background-color: var(--second-bg-color);
     padding: 6rem 10%;
+    display: flex;
+    justify-content: center;
 }
 
 .more-box {
     text-align: center;
+    width: 100%;
 }
 
 .more-box .heading {
-    margin-top: 1.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     font-size: 2.5rem;
     color: var(--edu-content);
 }
 
 .wrapper {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    gap: 3rem;
-    justify-content: center; /* Center items in the container */
+    flex-wrap: wrap;
+    gap: 2rem; /* Reduced gap for better spacing */
+    justify-content: center; /* Centering items */
+    max-width: 1000px; /* To prevent extreme stretching */
+    margin: 0 auto; /* Centering container */
 }
 
 .More-item {
     display: flex;
+    flex-direction: column; /* Stack image and text */
     align-items: center;
-    min-height: 200px;
-    min-width: 300px;
+    width: 45%; /* Two columns */
+    max-width: 350px; /* Control size */
     background: var(--bg-color);
     border: 3px solid grey;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     padding: 20px;
     cursor: pointer;
     color: var(--edu-content);
-    transition: 0.4s ease-in-out;
-    flex-basis: calc(50% - 1.5rem); /* Ensure 2 columns */
-    max-width: 400px; /* Control max width */
+    transition: 0.3s ease-in-out;
+    text-align: center;
     box-sizing: border-box;
 }
 
 .More-item:hover {
-    border: 3px solid var(--line-dot);
-    box-shadow: 0 0 15px var(--glow-color);
-    transform: scale(1.05);
+    border-color: var(--line-dot);
+    box-shadow: 0 0 10px var(--glow-color);
+    transform: translateY(-5px);
 }
 
 .More-item img {
-    width: 40%;
+    width: 80%; /* Adjust size */
+    max-width: 180px;
     border-radius: 10%;
     border: 3px solid grey;
-    margin-right: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
 .More-item img:hover {
-    border: 3px solid var(--line-dot);
+    border-color: var(--line-dot);
 }
 
-.More-item .text-content {
-    width: 60%;
+.text-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .More-item h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
-    margin-top: -1rem;
     margin-bottom: 1rem;
-    text-align: center;
     color: var(--edu-content);
 }
 
 .More-item p {
-    line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: cursive;
-    margin: 0;
-    text-align: justify;
-    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
 }
 
-/* Media query for smaller screen sizes to stack items in 1 column */
+/* Responsive: 1 column layout on small screens */
 @media (max-width: 768px) {
     .More-item {
-        flex-basis: 100%; /* Stack items in one column */
+        width: 100%;
     }
 }
 
